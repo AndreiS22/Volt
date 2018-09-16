@@ -216,15 +216,18 @@ void read_sensors_black(){
 
    
   // PID for 16 sensors
-  line = (s1_c * 1) + (s2_c * 2) + (s3_c * 3) + (s4_c * 4) + (s5_c * 5) + (s6_c * 6) + (s7_c * 7) + (s8_c * 8) + (s9_c * 9) + (s10_c * 10) +(s11_c * 11) + (s12_c * 12) + (s13_c * 13) + (s14_c * 14) + (s15_c * 15) + (s16_c * 16);
+  line = (s1_c * 1) + (s2_c * 2) + (s3_c * 3) + (s4_c * 4) + (s5_c * 5) + (s6_c * 6) + (s7_c * 7) + (s8_c * 8);// + (s9_c * 9) + (s10_c * 10) +(s11_c * 11) + (s12_c * 12) + (s13_c * 13) + (s14_c * 14) + (s15_c * 15) + (s16_c * 16);
   line = line * 10;
-  line = line / (s1_c + s2_c + s3_c + s4_c + s5_c + s6_c + s7_c + s8_c + s9_c + s10_c + s11_c + s12_c + s13_c + s14_c + s15_c + s16_c);
+  line = line / (s1_c + s2_c + s3_c + s4_c + s5_c + s6_c + s7_c + s8_c);// + s9_c + s10_c + s11_c + s12_c + s13_c + s14_c + s15_c + s16_c);
   line = line - 10;
 
 
   if(line != -11) {
-    if(s3_c + s4_c + s5_c + s6_c + s7_c + s8_c < s9_c + s10_c + s11_c + s12_c + s13_c + s14_c) pos = 2;
-    else if(s3_c + s4_c + s5_c + s6_c + s7_c + s8_c > s9_c + s10_c + s11_c + s12_c + s13_c + s14_c) pos = 0;
+    /*if(s3_c + s4_c + s5_c + s6_c + s7_c + s8_c < s9_c + s10_c + s11_c + s12_c + s13_c + s14_c) pos = 2;
+    else if(s3_c + s4_c + s5_c + s6_c + s7_c + s8_c > s9_c + s10_c + s11_c + s12_c + s13_c + s14_c) pos = 0;*/
+    if(s2_c + s3_c + s4_c < s5_c + s6_c + s7_c) pos = 2;
+    else if(s2_c + s3_c + s4_c > s5_c + s6_c + s7_c) pos = 0;
+    
     //else if (s6_c > 6 && s7_c > 6) pos = 1;
   }
 
@@ -239,7 +242,7 @@ void follow(){
   read_sensors_black();
 
 
-  int proportional = line - 75;
+  int proportional = line - 35;//75;
 
   int derivative = proportional - last_proportional;
 
@@ -251,8 +254,8 @@ void follow(){
 
   long power_difference = (proportional * kp) + (derivative * kd) + (integral * ki) ;
 
-  printState(); 
-  //voltSerial.println(line);
+  //printState(); 
+  voltSerial.println(power_difference);
 
  if(line != -11)
   { 

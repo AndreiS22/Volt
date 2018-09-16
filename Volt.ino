@@ -6,14 +6,19 @@
 
 void setup() {
   
- hardwareInit();
- wait_for_start();
  digitalWrite(13, HIGH);
-   delay(2000);
+  delay(500);
+ hardwareInit();
+ digitalWrite(13, LOW);
+ delay(500);
+ wait_for_start();
+  digitalWrite(13, HIGH);
+  delay(100);
   digitalWrite(13, LOW);
-  delay(2000);
-    /*changeThrottle(force);
-    delay(3000);*/
+  delay(100);
+  digitalWrite(13, HIGH);
+    changeThrottle(force);
+    delay(3000);
 }
 
 
@@ -23,7 +28,7 @@ void loop()
     //citire_senzori();
    //set_motors(100, 100);
   //changeThrottle(50);
-  follow();
+   follow();
    wait_for_stop();
 }
 

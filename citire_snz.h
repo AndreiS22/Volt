@@ -43,8 +43,8 @@ void citire_senzori(){
   voltSerial.print(s7);
   voltSerial.print("    ");
   voltSerial.print(s8);
-  voltSerial.print("    ");
-  voltSerial.print(s9);
+  voltSerial.println("    ");
+ /* voltSerial.print(s9);
   voltSerial.print("    ");
   voltSerial.print(s10);
   voltSerial.print("    ");
@@ -61,6 +61,7 @@ void citire_senzori(){
   voltSerial.print(s16);
   voltSerial.print("    ");
   voltSerial.println(sd);
+ */ delay(500);
 }
 
 void wait_for_start() {

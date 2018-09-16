@@ -2,24 +2,43 @@
 #define variables
 
 
-int max_vel = 120;// 0 - 255
+int max_vel = 255;// 0 - 255
 //2S - vals
-int kp = 4; // 1 - 30
+int kp = 5; // 1 - 30
 int ki = 0;
-int kd = 40; // 0 - 5000
-int turn_vel = 150; // 50-200
-int force = 50; // 1 - 99
+int kd = 50; // 0 - 5000
+int turn_vel = 120; // 50-200
+int force = 60; // 1 - 99
 
 
 
-int pas0 = 250;
-int pas1 = 300;
-int pas2 = 350;
-int pas3 = 460;
-int pas4 = 580;
-int pas5 = 680;
-int pas6 = 790;
-int pas7 = 850;
+int pas0 = 70;
+int pas1 = 140;
+int pas2 = 280;
+int pas3 = 390;
+int pas4 = 500;
+int pas5 = 610;
+int pas6 = 720;
+int pas7 = 810;
+
+
+//int pas0 = 350;
+//int pas1 = 400;
+//int pas2 = 450;
+//int pas3 = 500;
+//int pas4 = 550;
+//int pas5 = 650;
+//int pas6 = 700;
+//int pas7 = 850;
+
+/*int pas0 = 450;
+int pas1 = 500;
+int pas2 = 550;
+int pas3 = 600;
+int pas4 = 650;
+int pas5 = 750;
+int pas6 = 800;
+int pas7 = 860;*/
 
 int pas0_w = 500;
 int pas1_w = 440;
