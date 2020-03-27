@@ -28,6 +28,10 @@ void citire(){
 void citire_senzori(){
  
   citire();
+
+  if(s8 > 300) digitalWrite(13, HIGH);
+  else digitalWrite(13, LOW);
+  
   voltSerial.print(s1);
   voltSerial.print("    ");
   voltSerial.print(s2);
@@ -83,4 +87,3 @@ void wait_for_stop(){
 }
 
 #endif 
-

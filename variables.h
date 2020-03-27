@@ -2,11 +2,11 @@
 #define variables
 
 
-int max_vel = 255;// 0 - 255
+int max_vel = 140;// 0 - 255
 //2S - vals
-int kp = 5; // 1 - 30
+int kp = 2; // 1 - 30
 int ki = 0;
-int kd = 50; // 0 - 5000
+int kd = 120; // 0 - 5000
 int turn_vel = 120; // 50-200
 int force = 60; // 1 - 99
 
